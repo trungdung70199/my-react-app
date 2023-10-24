@@ -1,10 +1,7 @@
 import logo from './logo.svg';
 import './App.scss';
 import MyComponent from './Example/MyComponent';
-/*
-2 components: class component / function component (function, arrow)
-class component: JSX -> HTML + JS
-*/
+
 function App() {
   // Co the write function theo cach const App() => {}
   return (
