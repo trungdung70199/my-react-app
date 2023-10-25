@@ -10,16 +10,23 @@ class MyComponent extends React.Component {
     // Object -> key: value
     // Neu state thay doi se lam view lap tuc thay doi theo
     state = {
-        name: 'D',
+        name: '',
         fb: 'TD'
     }
 
     handleOnChangeName = (event) => {
+        console.log(event.target.value,'event target:', event.target,'event object:', event)
         this.setState({
-            name: event.target.value
+            name: event.target.value,
         })
     }
+    // Khai bao event
+    handleClickButton = () => {
+        alert('Click me')
+    }
+    // re-render
     render() {
+        console.log('>>> call render:', this.state)
         return(
             <>
                 <div className='first'>
@@ -32,6 +39,9 @@ class MyComponent extends React.Component {
                 </div>
                 <div className='second'>
                     My facebook is: {this.state.fb}
+                </div>
+                <div className='third'>
+                    <button onClick={() => this.handleClickButton() }>Click me</button>
                 </div>
             </>
         ) 
