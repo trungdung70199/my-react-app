@@ -1,15 +1,16 @@
 /* eslint-disable react/jsx-no-undef */
 import React from "react";
 import Child from './Child';
+// import Product from './product';
 
 class Form extends React.Component {
     state = {
         firstName: '',
         lastName: '',
         arrJobs: [
-            {id: 'abcJob1', title: 'student', salary: '100$'},
-            {id: 'abcJob2', title: 'Developer', salary: '600$'},
-            {id: 'abcJob3', title: 'Tester', salary: '500$'}
+            {id: 'abcJob1', title: 'student', salary: '100'},
+            {id: 'abcJob2', title: 'Developer', salary: '600'},
+            {id: 'abcJob3', title: 'Tester', salary: '500'}
         ]
     }
 

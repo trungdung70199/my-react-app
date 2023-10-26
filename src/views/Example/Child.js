@@ -1,29 +1,82 @@
 import React from 'react';
-import Form from './Form';
 
 class Child extends React.Component {
     // re-render
+    state = {
+        showJobs: false
+    }
+
+    handleShowHide = (status) => {
+    this.setState({
+        showJobs: !this.state.showJobs // Neu true <--> false
+    })
+    }
     render() {
-        console.log('>>> Check prop:', this.props)
         // let name = this.props.name;
         // let age = this.props.age;
         // or khi ten bien trung voi ten key
-        let { name, age, address, arrJobs} = this.props
+        let { arrJobs } = this.props;
+        let { showJobs } = this.state;
+        let check = showJobs === true ? 'showJobs = true' : 'showJobs = false';
+        console.log('>>> check conditional:', check)
         return(
             <>
-                <div className='jobs-lists'>
-                    {
-                        arrJobs.map((item, index) => {
-                            return (
-                                <div key={item}>
-                                    {item.title} - {item.salary}
-                                </div>
-                            )
-                        })
+                {showJobs === false ?
+                    <div>
+                        <button onClick={() => this.handleShowHide()}>Show</button>
+                    </div>
+                    : 
+                <>
+                    <div className="jobs-lists">
+                        {
+                            arrJobs.map((item, index) => {
+                                if(item.salary >= 500) {
+
+                                }
+                                return (
+                                    <div key={item.id}>
+                                        {item.title} - {item.salary}$
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
+                    <div>
+                        <button onClick={() => this.handleShowHide()}>Hide</button>
+                    </div>
+                </>
                     }
-                </div>
             </>
-        ) 
-    } 
+        )
+    }
 }
+
+// const child = (props) => {
+//     let { arrJobs } = props;
+//     return(
+//         <>
+//             <div className="jobs-lists">
+//                 {
+//                     arrJobs.map((item, index) => {
+//                         // Out put salary >= 500 people
+//                         if (+item.salary >= 500) {
+//                             return (
+//                                 <div key={item.id}>
+//                                     {item.title} - {item.salary}
+//                                 </div>
+//                             )
+//                         }
+//                     })
+//                 }
+//             </div>
+//         </>
+//     )
+// }
+
+// const Child = (props) => {
+//     console.log(">>> Check child props", props)
+//     return(
+//         <div>Hello arrow function</div>
+//     )
+// }
 export default Child;
