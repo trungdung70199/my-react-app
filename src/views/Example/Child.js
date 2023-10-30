@@ -11,10 +11,15 @@ class Child extends React.Component {
         showJobs: !this.state.showJobs // Neu true <--> false
     })
     }
+
+    handleOnclickDelete = (job) => {
+        console.log('>>> handleOnclickDelete: ', job)
+        this.props.deleteAJob(job)
+    }
     render() {
         // let name = this.props.name;
         // let age = this.props.age;
-        // or khi ten bien trung voi ten key
+        // or variable == key
         let { arrJobs } = this.props;
         let { showJobs } = this.state;
         let check = showJobs === true ? 'showJobs = true' : 'showJobs = false';
@@ -35,7 +40,8 @@ class Child extends React.Component {
                                 }
                                 return (
                                     <div key={item.id}>
-                                        {item.title} - {item.salary}$
+                                        {item.title} - {item.salary} 
+                                        <></> <span onClick={()=>this.handleOnclickDelete(item)}>x</span> {/*<></> tao khoang trang */}
                                     </div>
                                 )
                             })

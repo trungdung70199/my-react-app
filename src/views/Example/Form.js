@@ -15,13 +15,24 @@ class Form extends React.Component {
 
     addNewJob = (job) => {
         console.log('Check job from parent:', job);
+        // let currentJobs  = this.state.arrJobs;
+        // currentJobs.push(job)
         // let currentJobs = this.state.arrJobs
         // or
         this.setState({
-            arrJobs: [...this.state.arrJobs, job]
+            // or 
+            arrJobs: [...this.state.arrJobs, job] //...: copy arrJobs
+            // arrJobs: currentJobs
     })
     }
 
+    deleteAJob = (job) => {
+        let currentJobs = this.state.arrJobs;
+        currentJobs = currentJobs.filter(item => item.id !== job.id)
+        this.setState({
+            arrJobs: currentJobs
+        })
+    }
     render() {
         return (
             <>
@@ -30,6 +41,7 @@ class Form extends React.Component {
                 />
                 <Child 
                     arrJobs = {this.state.arrJobs}
+                    deleteAJob = {this.addNewJob}
                 />
             </>
         )
