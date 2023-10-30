@@ -33,6 +33,15 @@ class Form extends React.Component {
             arrJobs: currentJobs
         })
     }
+
+    componentDidUpdate(prevProps, prevState) {
+        console.log('>>> run did update: ', 'prev state: ', prevState, 'current state: ', this.state)
+    }
+    // Call API
+    componentDidMount() {
+        console.log('>>> run component Did Mount')
+    }
+
     render() {
         return (
             <>
