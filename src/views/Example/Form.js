@@ -13,17 +13,21 @@ class Form extends React.Component {
         ]
     }
 
-
-    handleSubmit = (event) => {
-        event.preventDefault()// su dung  preventDefault: website se k reload lai
-        console.log('>>> Check data input:', this.state)
-        alert('Click me!')
+    addNewJob = (job) => {
+        console.log('Check job from parent:', job);
+        // let currentJobs = this.state.arrJobs
+        // or
+        this.setState({
+            arrJobs: [...this.state.arrJobs, job]
+    })
     }
+
     render() {
         return (
             <>
-                <AddComponent />
-
+                <AddComponent
+                 addNewJob={this.addNewJob}
+                />
                 <Child 
                     arrJobs = {this.state.arrJobs}
                 />
