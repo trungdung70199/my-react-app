@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './Demo.scss';
 class Child extends React.Component {
     // re-render
     state = {
@@ -28,7 +28,10 @@ class Child extends React.Component {
             <>
                 {showJobs === false ?
                     <div>
-                        <button onClick={() => this.handleShowHide()}>Show</button>
+                        <button className='btn-show' 
+                            onClick={() => this.handleShowHide()}>
+                            Show
+                        </button>
                     </div>
                     : 
                 <>
@@ -36,7 +39,6 @@ class Child extends React.Component {
                         {
                             arrJobs.map((item, index) => {
                                 if(item.salary >= 500) {
-
                                 }
                                 return (
                                     <div key={item.id}>
@@ -48,7 +50,10 @@ class Child extends React.Component {
                         }
                     </div>
                     <div>
-                        <button onClick={() => this.handleShowHide()}>Hide</button>
+                        <button className='btn-hide'
+                            onClick={() => this.handleShowHide()}>
+                            Hide
+                        </button>
                     </div>
                 </>
                     }
