@@ -1,43 +1,51 @@
 import React from 'react';
+import './ListTodo.scss';
+import AddTodo from './AddTodo';
+import { ToastContainer, toast } from 'react-toastify';
 
-class ListTodo extends React.Component {
+class listTodo extends React.Component {
 	state = {
-		list: [
+		listTodo: [
 			{ id: 'todo1', title: 'Doing homework' },
 			{ id: 'todo2', title: 'Making videos' },
 			{ id: 'todo3', title: 'Fixing' }
 		]
 	};
 
+	addNewTodo = (todo) => {
+		// or let currentListTodo = this.state.listTodos;
+		// currentListTodo.push(todo);
+		this.setState({
+			listTodo: [ ...this.state.listTodo, todo ] //copy
+			// listTodos: currentListTodo
+		});
+		// Change color with toast
+		toast.success('Wow so easy!!!');
+	};
 	render() {
 		// eslint-disable-next-line no-unused-vars
-		let { list } = this.state;
-		// or let lisTodos = this.state.listTodos;
+		let { listTodo } = this.state;
+		// or let lisTodo = this.state.listTodo;
 		return (
 			<div className="list-todo-container">
-				<div className="add-todo">
-					<input type="text" />
-					<button type="button">Add</button>
-				</div>
+				<AddTodo addNewTodo={this.addNewTodo} />
 				<div className="list-todo-content">
-					<div className="todo-child">
-						<span>Todo 1</span>
-						<button>Edit</button>
-						<button>Delete</button>
-					</div>
-					<div className="todo-child">
-						<span>Todo 2</span>
-						<button>Edit</button>
-						<button>Delete</button>
-					</div>
-					<div className="todo-child">
-						<span>Todo 3</span>
-						<button>Edit</button>
-						<button>Delete</button>
-					</div>
+					{listTodo &&
+						listTodo.length > 0 &&
+						listTodo.map((item, index) => {
+							return (
+								<div className="todo-child" key={item.id}>
+									<span>
+										{index + 1} - {item.title}{' '}
+									</span>
+									<button className="edit">Edit</button>
+									<button className="delete">Delete</button>
+								</div>
+							);
+						})}
 				</div>
 			</div>
 		);
 	}
 }
-export default ListTodo;
+export default listTodo;
