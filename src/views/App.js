@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.scss';
 // import MyComponent from './Example/MyComponent';
 // import Form from './Example/Form';
-import ListTodo from './Todos/ListTodo';
+import ListTodo from './Todo/ListTodo';
 // import Product from './Example/product';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
