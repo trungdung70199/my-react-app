@@ -22,6 +22,15 @@ class ListTodo extends React.Component {
 		})
 		toast.success("Wow so easy!")
 	}
+
+	handleDeleTodo = (todo) => {
+		let currentTodo = this.state.listTodo;
+		currentTodo = currentTodo.map(item => item.id !== todo.id);
+		this.setState({
+			listTodo: currentTodo
+		})
+	}
+
 	render() {
 		// eslint-disable-next-line no-unused-vars
 		let { listTodo } = this.state;
@@ -39,7 +48,11 @@ class ListTodo extends React.Component {
 								<div className="todo-child" key={item.id}>
 									<span> {index + 1} - {item.title}</span>
 									<button className='edit'>Edit</button>
-									<button className='delete'>Delete</button>
+									<button className='delete'
+										onClick={() => this.handleDeleTodo(item)}
+									>
+										Delete
+									</button>
 								</div>
 							);
 						})}
