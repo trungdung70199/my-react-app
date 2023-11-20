@@ -1,6 +1,7 @@
 import React from 'react';
 import './ListTodo.scss';
 import AddTodo from './AddTodo';
+import { toast } from 'react-toastify';
 
 class ListTodo extends React.Component {
 	// eslint-disable-next-line react/require-render-return
@@ -11,13 +12,25 @@ class ListTodo extends React.Component {
 			{ id: 'todo3', title: 'Fixing' }
 		]
 	};
+
+	addNewTodo = (todo) => {
+		// let currentListTodo = this.state.listTodo;
+		// currentListTodo.push(todo);
+		this.setState({
+			// listTodo: currentListTodo
+			listTodo: [...this.state.listTodo, todo]
+		})
+		toast.success("Wow so easy!")
+	}
 	render() {
 		// eslint-disable-next-line no-unused-vars
 		let { listTodo } = this.state;
 		// or listTodo = this.state.listTodo;
 		return (
 			<div className="list-todo-container">
-				<AddTodo />
+				<AddTodo
+					addNewTodo={this.addNewTodo}
+				/>
 				<div className="list-todo-content">
 					{listTodo &&
 						listTodo.length > 0 &&
