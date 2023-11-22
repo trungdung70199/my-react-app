@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.scss';
 // import MyComponent from './Example/MyComponent';
 import Form from './Example/Form';
@@ -13,7 +13,7 @@ import {
 	Switch,
 	Route,
 	Link
-} from "react-router-dom"
+} from "react-router-dom";
 
 function App() {
 	return (
@@ -21,7 +21,7 @@ function App() {
 		<div className="App">
 			<header className="App-header">
 				<Nav />
-				<img src={logo} className="App-logo" alt="logo" />
+				{/* <img src={logo} className="App-logo" alt="logo" /> */}
 				<p>Todo app</p>
 				
 				{/* <MyComponent />  */}
