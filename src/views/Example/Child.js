@@ -26,7 +26,8 @@ class Child extends React.Component {
         console.log('>>> check conditional:', check)
         return(
             <>
-                {showJobs === false ?
+                {
+                showJobs === false ?
                     <div>
                         <button className='btn-show' 
                             onClick={() => this.handleShowHide()}>
@@ -43,7 +44,7 @@ class Child extends React.Component {
                                 return (
                                     <div key={item.id}>
                                         {item.title} - {item.salary} 
-                                        <></> <span onClick={()=>this.handleOnclickDelete(item)}>x</span> {/*<></> tao khoang trang */}
+                                        <></> <span onClick={()=>this.handleOnclickDelete(item)}>$</span> {/*<></> tao khoang trang */}
                                     </div>
                                 )
                             })
@@ -61,33 +62,4 @@ class Child extends React.Component {
         )
     }
 }
-
-// const child = (props) => {
-//     let { arrJobs } = props;
-//     return(
-//         <>
-//             <div className="jobs-lists">
-//                 {
-//                     arrJobs.map((item, index) => {
-//                         // Out put salary >= 500 people
-//                         if (+item.salary >= 500) {
-//                             return (
-//                                 <div key={item.id}>
-//                                     {item.title} - {item.salary}
-//                                 </div>
-//                             )
-//                         }
-//                     })
-//                 }
-//             </div>
-//         </>
-//     )
-// }
-
-// const Child = (props) => {
-//     console.log(">>> Check child props", props)
-//     return(
-//         <div>Hello arrow function</div>
-//     )
-// }
 export default Child;

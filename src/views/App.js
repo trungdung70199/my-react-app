@@ -5,7 +5,7 @@ import Form from './Example/Form';
 import ListTodo from './Todo/ListTodo';
 // import Product from './Example/product';
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+// import 'react-toastify/dist/ReactToastify.css';
 import Home from './Example/Home';
 import Nav from './Nav/Nav';
 import {
