@@ -12,7 +12,7 @@ import {
 	BrowserRouter,
 	Switch,
 	Route,
-	Link
+	Link,
 } from "react-router-dom";
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
 			<header className="App-header">
 				<Nav />
 				{/* <img src={logo} className="App-logo" alt="logo" /> */}
-				<p>Todo app</p>
+				<p>Make your to do list app</p>
 				
 				{/* <MyComponent />  */}
 				{/*Shortcut type*/}

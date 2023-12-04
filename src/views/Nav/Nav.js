@@ -21,7 +21,7 @@ class Nav extends React.Component {
                 {/* <Link to="/">Home</Link>
                 <Link to="/todo">Todo</Link>
                 <Link to="/about">About</Link> */}
-                <a class="active" href="/" exact={true}>Home</a>
+                <a className="active" href="/">Home</a>
                 <a href="/todo">Todo</a>
                 <a href="/about">About</a>
             </div>
