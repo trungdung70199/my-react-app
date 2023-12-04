@@ -42,8 +42,9 @@ class AddComponent extends React.Component {
     render () {
         return(
             <>
+            <h2>Job title and salary?</h2>
             <form>
-                <label htmlFor="fname">Job's title:</label><br />
+                <label htmlFor="fname">Job title:</label><br />
                 <input
                     type="text"
                     value={this.state.title}
