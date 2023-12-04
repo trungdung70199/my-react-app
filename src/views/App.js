@@ -22,7 +22,6 @@ function App() {
 			<header className="App-header">
 				<Nav />
 				{/* <img src={logo} className="App-logo" alt="logo" /> */}
-				<p>Make your to do list app</p>
 				
 				{/* <MyComponent />  */}
 				{/*Shortcut type*/}

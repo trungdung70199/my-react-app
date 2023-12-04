@@ -15,6 +15,7 @@ class AddTodo extends React.Component {
     handleAddTodo = () => {
         if(!this.state.title) {
             toast.error(`Missing title's Todo`)
+            alert(`Missing title's Todo`)
             return;
             // if(undefined/null/empty) => false
         }
@@ -32,6 +33,7 @@ class AddTodo extends React.Component {
         let { title } = this.state;
         return(
             <div className="add-todo">
+                <h2>Todo list App</h2>
                 <input type="text" value={title} 
                     onChange={(event) => this.handleOnChangeTitle(event)}
                 />

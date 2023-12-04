@@ -23,7 +23,8 @@ class AddComponent extends React.Component {
         event.preventDefault()// su dung  preventDefault: website se k reload lai
         console.log('>>> Check data input:', this.state)
         if(!this.state.title || !this.state.salary){
-            alert('Missing required')
+            toast.error('Missing required')
+            alert(`Missing required`)
             return;
         }
         // alert('Click me!')
