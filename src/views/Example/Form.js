@@ -7,9 +7,9 @@ import AddComponent from "./AddComponent";
 class Form extends React.Component {
     state = {
         arrJobs: [
-            {id: 'abcJob1', title: 'student', salary: '100'},
-            {id: 'abcJob2', title: 'Developer', salary: '3000'},
-            {id: 'abcJob3', title: 'Tester', salary: '4000'}
+            // {id: 'abcJob1', title: 'student', salary: '100'},
+            // {id: 'abcJob2', title: 'Developer', salary: '3000'},
+            // {id: 'abcJob3', title: 'Tester', salary: '4000'}
         ]
     }
 

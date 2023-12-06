@@ -23,7 +23,7 @@ class Nav extends React.Component {
                 <Link to="/about">About</Link> */}
                 <a className="active" href="/">Home</a>
                 <a href="/todo">Todo</a>
-                <a href="/about">About</a>
+                <a href="/about">Job & Salary</a>
             </div>
         )
     }
