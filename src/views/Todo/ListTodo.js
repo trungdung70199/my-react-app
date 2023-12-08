@@ -7,9 +7,9 @@ class ListTodo extends React.Component {
 	// eslint-disable-next-line react/require-render-return
 	state = {
 		listTodo: [
-			{ id: 'todo1', title: 'Go to School' },
-			{ id: 'todo2', title: 'Doing HomeWork' },
-			{ id: 'todo3', title: 'Go to part time job' }
+			// { id: 'todo1', title: 'Go to School' },
+			// { id: 'todo2', title: 'Doing HomeWork' },
+			// { id: 'todo3', title: 'Go to part time job' }
 		],
 		editTodo: {}
 	};
